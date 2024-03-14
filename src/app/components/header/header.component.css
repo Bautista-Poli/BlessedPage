@@ -1,0 +1,109 @@
+.top-header{
+    background-color: #ddae4a;
+    padding: 1px 0;
+    padding-right: 40.5vw;
+    position: fixed;
+    margin-top:-6vw;
+    z-index: 1000;
+    
+}
+
+.logo{
+    width: 200px;
+    height:100px;
+    margin-left:30px;
+    margin-bottom:15px;
+}
+
+.perfil-icon{
+    width: 52px;
+    height:52px;
+    margin-left:57vw;
+    margin-top:20px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.compras{
+    margin-left:90vw;
+    margin-top: -5vw;
+}
+.customIconSize {
+    font-size: 50px;
+    height: 50px ;
+    width: 50px ;
+}
+/* .help {cursor: help;} */
+
+.fila1{
+    display: flex;
+}
+.nav-items{
+    padding-left:20px;
+    color:white;
+}
+
+.menu-text{
+    margin-left:39.85vw;
+    margin-right:1vw;
+    margin-top: 1.5vw;
+    font-size:20px;
+    margin-bottom: 1.5vw;
+    
+}
+ 
+.middle-header{
+    background-color: #000;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 4vw;
+    padding-top: 10px;
+}
+
+
+.menuAnswer{
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:50px;
+}
+.producto{
+    margin-top:15px;
+    
+}
+.answer{
+    
+    padding-top: 10px;
+    display:flex;
+}
+
+.izquierda{
+    padding-right: 10px;
+}
+
+.derecha{
+    padding-left: 20px;
+}
+
+.compras{
+    padding-top:10px;
+    display:flex;
+}
+
+#compra2{
+    padding-right: 44px;
+}
+.final{
+    margin-top:30px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    width: 200px;
+    height: 50px; 
+    border-radius: 50px;
+    color:white;
+    background-color: black;
+    border-width: 3px;
+}
+
+.precioFinal{
+    font-weight: 700;
+}

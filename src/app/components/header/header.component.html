@@ -1,0 +1,57 @@
+
+<header>
+    
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class>
+                    <p class="menu-text"><i ></i> Descuentos de hasta 25%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-header">
+        <div class="logo">
+            <a routerLink="/home"><img class="logo" src="https://acdn.mitiendanube.com/stores/003/016/855/themes/common/logo-500303125-1685494834-7e58c54f89e79e75a656ec995eabc21d1685494835.jpg?0" class="img-responsive" alt="logo"></a>
+        </div>
+        <button  hmat-icon-button [matMenuTriggerFor]="menu" class="compras">
+            <mat-icon   [matBadge]="lenghtNum(_cart.items)" class="customIconSize">shopping_cart</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu" >
+            <div class="menuAnswer" >  
+                <div class="producto" *ngFor="let item of _cart.items">
+                    <a class="izquierda">{{item.name}}</a>
+                    <span>$ {{item.price}}</span>
+                    <button class="derecha"  ><mat-icon color="warn"> cancel </mat-icon></button>
+                </div>
+                <br>
+                <hr>
+                <div class="answer" *ngIf="lenghtNum(_cart.items) !== ''">
+                    <a class="izquierda"> Precio final: </a>
+                    <a routerLink="cart" class="precioFinal">${{total(_cart.items)}}</a>
+                </div>
+                <hr>
+                <button routerLink="/cart" class="final" *ngIf='lenghtNum(_cart.items) != ""'> Terminar compra</button>
+                <a *ngIf="lenghtNum(_cart.items) === ''">No hay ningun articulo en su carrito</a>
+            </div>
+            
+            
+        </mat-menu>   
+     
+        <div class="container">
+            <div class="fila2">
+                <div>
+                    <button class="nav-items" routerLink="/promociones">Promociones</button>
+                    <a class="nav-items" routerLink="/Promociones">Remeras</a>
+                    <a class="nav-items" href="service.html">Busos</a>
+                    <a class="nav-items" href="gallery.html">Pantalones</a>
+                    <a class="nav-items" href="blog.html">Bermudas</a>
+                    <a class="nav-items" href="contact.html">New Drop</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</header>

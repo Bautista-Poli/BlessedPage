@@ -1,0 +1,100 @@
+
+<app-header></app-header>
+<div class="body">
+    <div class="container">
+    
+        <!-- Left Column / Headphones Image -->
+        <div class="left-column">
+        <img data-image="black" [src]="zoomItem.src" alt="">
+        <img data-image="blue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/220px-Black.png" alt="">
+        <img data-image="red" class="active"[src]="zoomItem.srcOut" alt="Foto {{zoomItem.name}}">
+        </div>
+    
+    
+        <!-- Right Column -->
+        <div class="right-column">
+    
+        <!-- Product Description -->
+        <div class="product-description">
+            <span>{{zoomItem.category}}</span>
+            <h1>{{zoomItem.name}}</h1>
+        </div>
+    
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+    
+            <!-- Product Color -->
+            <div class="product-color">
+            <span>Color</span>
+    
+            <div class="color-choose">
+                <div >
+                <input data-image="red" type="radio" id="red" name="color" value="red" [ngStyle]="{'background-color':color1}" checked>
+                <label for="red" ><span [ngStyle]="{'background-color':color1}"></span></label>
+                </div>
+                <div>
+                <input data-image="blue" type="radio" id="blue" name="color" [ngStyle]="{'background-color':color2}" value="blue">
+                <label for="blue"><span [ngStyle]="{'background-color':color2}"></span></label>
+                </div>
+            </div>
+    
+            </div>
+    
+            <!-- Cable Configuration -->
+            <div class="cable-config">
+                <span>Elegir talle: </span>
+
+                <div class="sizeChoose">
+                    <button class="sizeIn" (click)="changeSize('S')">S</button>
+                    <button class="sizeIn" (click)="changeSize('M')">M</button>
+                    <button class="sizeIn" (click)="changeSize('L')">L</button>
+                    <button class="sizeOut" (click)="changeSize('XL')">XL</button>
+                </div>
+                <div class="aTxt">
+                    <p>No usar blanqueador </p>
+                    <p> %100 algodon </p>
+                    <p>No lavar en seco. </p>
+                    <p>Planchar a temperatura baja. </p>
+                    <p>Lavar a máquina en temperatura alta y en ciclo normal. </p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Product Pricing -->
+        <div class="product-price">
+            <span>${{zoomItem.price}}</span>
+            
+        </div>
+            <a (click)="onAddToCart(zoomItem)" class="cart-btn">Agregar al carrito</a>
+            <a routerLink="/home" class="continue-btn">Seguir comprando</a>
+        </div>
+        
+    </div>
+    <h1 class="title">Productos relacionados</h1>
+
+    <!-- SEGUNDA PARTE-->
+
+    <div class="slideshow-container">
+
+        <div class="fade first"  >
+            <div class="photo" *ngFor="let product of showList" >
+                <div class="numbertext">1 / 3</div>
+                <img class="image" [src]="product.src" >
+                <div class="precio">
+                    <h1 > ${{descuento(product.price,product.discount)}}</h1>
+                </div>
+                <h3 class="titulo"> {{product.name}} </h3>
+                
+            </div>
+        </div>
+        
+        <!-- Next and previous buttons -->
+        <button class="prev" (click)="minusSlides(index)">&#10094;</button>
+        <a class="next" (click)="plusSlides(index)">&#10095;</a>
+    </div>
+    <br>
+    
+    
+    
+</div>
+<app-footer></app-footer>

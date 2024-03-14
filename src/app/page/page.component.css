@@ -1,0 +1,19 @@
+.fila{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    margin-right: 20px;
+}
+
+.box{
+    margin-left:20px;
+    margin-top:30px;
+    background-color: white;
+    border-width: 5px;
+    border-color:white;
+    border-radius: 15px;
+}
+
+.box:hover{
+    border-color: grey;
+    
+}

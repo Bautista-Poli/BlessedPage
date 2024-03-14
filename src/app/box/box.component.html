@@ -1,0 +1,29 @@
+<div>
+    <a routerLink="/zoom/{{product.id}}">
+            <div (mouseenter)="changeText=true" (mouseleave)="changeText=false">
+                <span *ngIf="!changeText"><img class="image" [src]="product.src" ></span>
+                <span *ngIf="changeText"><img class="image" [src]="product.srcOut" ></span>
+            </div>
+
+        <!--
+        <div (mouseenter)="changeClass='foto1'" (mouseleave)="changeClass='foto2'">
+            <img class="image" [class]="changeClass" [src]="product.src">
+            <img class="image" [class]="oposite(changeClass)" [src]="product.srcOut">
+        </div>
+        -->
+        
+        <div class="descuento">
+            <h1 class="descuentoTxt" *ngIf=" product.discount != 0"><span>{{product.discount}}%</span></h1>
+        </div>
+        <h3 class="titulo"> {{product.name}} </h3>
+        <div class="discountPrices" *ngIf="descuento(product.price,product.discount) != product.price">
+            <h1 class="lastPrice"> ${{product.price}} </h1>
+            <h1 class="newPrice" > ${{descuento(product.price,product.discount)}} </h1>
+            <!-- Se puede poner tambien <s> -->
+        </div>
+        <div>
+            <h1 *ngIf="descuento(product.price,product.discount) == product.price" class="price"> ${{product.price}}</h1>
+        </div>
+        <h5 class="cuota"> 3 cuotas sin interes de {{cuotas(product.price)}}</h5>
+    </a>
+</div>

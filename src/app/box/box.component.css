@@ -1,0 +1,53 @@
+.image{
+    width:300px;
+    height:420px;
+}
+
+.descuento{
+    position: absolute;
+    color: white;
+    margin-top:-30px;
+}
+.descuentoTxt span{
+    color:white;
+    background-color: red; 
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.lastPrice{
+    text-decoration: line-through;
+    color:rgba(172, 170, 170, 0.877);
+    margin-left:30px;
+    font-size:30px;
+}
+.newPrice{
+    margin-left:20px;
+    font-weight: 500;
+    font-size:30px;
+}
+.discountPrices{
+    display:flex;
+    
+}
+
+.price{
+    margin-left:30%;
+    font-weight: 500;
+    font-size:30px;
+}
+
+.cuota{
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.titulo{
+    margin-left:20px;
+    font-size: 30px;
+    font-weight: 150;
+    /*padding-top:400px;*/
+}
+
+
+

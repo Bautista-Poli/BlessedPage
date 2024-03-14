@@ -1,0 +1,20 @@
+
+<div>
+    <app-header></app-header>
+
+
+      
+      <div id="page">
+        <div class="columna">
+          <button>
+            <div class="fila">
+              <app-box class="box" *ngFor="let product of productList" [product]="product"></app-box>
+            </div>
+          </button>
+        </div>    
+      <br>
+      <br>
+      <app-footer></app-footer>
+</div>
+
+

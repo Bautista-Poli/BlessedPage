@@ -1,0 +1,115 @@
+<header>
+    <div class="logo">
+        <a routerLink="/home"><img class="logo" src="https://acdn.mitiendanube.com/stores/003/016/855/themes/common/logo-500303125-1685494834-7e58c54f89e79e75a656ec995eabc21d1685494835.jpg?0" class="img-responsive" alt="logo"></a>
+    </div>
+</header>
+
+<div class="compras">
+    <!-- Revisar esto -->
+    <mat-card *ngIf="_cart.items.length">
+        <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="product">
+                <th mat-header-cell *matHeaderCellDef class="titulo">Productos</th>
+                <td mat-cell *matCellDef="let element" >
+                    <img src="{{element.src}}" alt="src" class="producto">
+                </td>
+                <td mat-footer-cell *matFooterCellDef>
+                    <button routerLink="/home" class="backButton" id="backButton1"> Seguir comprando </button>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="name" class="container nameContainer">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                  <p class="tableTxt"> {{ element.name }} </p>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="quantity">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="quantity">
+                        <span class="minus" (click)="element.quantity = minus(element.quantity)">-</span>
+                        <input type="text" class="inputQuantity" value="{{element.quantity}}"/>
+                        <span class="plus" (click)="element.quantity = sum(element.quantity)">+</span>
+                    </div>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                  <p class="tableTxt">${{ element.price }}</p>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="size" >
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element" class="size">
+                  <p class="tableTxt">{{ element.size }} </p>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="action" >
+                <th mat-header-cell *matHeaderCellDef>
+                    <button mat-raised-button (click)="_cart.items=[]"> Clear All </button>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  <button (click)="eliminateElement(element.id)"><mat-icon>close</mat-icon></button>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+        </table>
+    </mat-card>
+    <mat-card *ngIf="!_cart.items.length" class="vacio">
+        <img id="shoppingBag" src="https://cdn.icon-icons.com/icons2/2582/PNG/512/shopping_bag_icon_153983.png">
+        <h1 class="vacioTxt"> Tu carrito esta vacío </h1>
+        <button routerLink="/home" class="backButton" id="backButton2"> Seguir comprando </button>
+    </mat-card>
+</div>
+<form class="form">
+    <h1 id="compraTitulo">Resumen de su compra</h1>
+    <div class="subtotal">
+        <a id="subtotalIzq">Subtotal (Sin envio)</a>
+        <a id="subtotalDer">{{total(_cart.items)}}</a>
+    </div>
+    
+    <label for="fname" class="objForm" >Mail:</label><br>
+    <input type="text" class="imputForm objForm" id="mail" name="fname"><br>
+    <div id="codigoPostal">
+        <label for="lname" class="objForm">Codigo Postal:</label><br>
+        <mat-icon id="codIcon">airport_shuttle</mat-icon>
+        
+    </div>
+    <div>
+        <input type="text" class="imputForm objForm" id="lname" name="lname">
+        <button id="codButton"> Calcular </button>
+    </div>
+    <button id="pagoButton"> Iniciar Pago </button>
+    <br>
+    <br>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<app-footer></app-footer>
